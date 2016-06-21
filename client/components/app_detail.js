@@ -1,10 +1,14 @@
 import React from 'react';
 
 
-const AppDetail = () => {
+const AppDetail = (props) => {
+	// props.app this is the app object
 	return(
 			<div>
-				Details
+				
+				<img src={props.app.appIcon} />
+				{props.app.appTitle}
+
 			</div>
 		);
 };

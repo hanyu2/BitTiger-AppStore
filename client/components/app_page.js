@@ -13,7 +13,7 @@ const APP = [
 // create our component
 const AppPage = () => {
 	const RenderedApp = APP.map((app) => {
-		return <AppDetail />
+		return <AppDetail app={app}/>
 	});
 
 	return (
