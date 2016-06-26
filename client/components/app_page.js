@@ -12,12 +12,12 @@ const APP = [
 
 // create our component
 const AppPage = () => {
-	const RenderedApp = APP.map((app) => {
-		return <AppDetail app={app}/>
+	const RenderedApp = APP.map( app => {
+		return <AppDetail key={APP.appTitle} app={app}/>
 	});
 
 	return (
-			<ul>
+			<ul className="media-list list-group">
 				{RenderedApp}
 			</ul>
 		);
