@@ -3,24 +3,20 @@
 import React from 'react';
 import AppDetail from './app_detail';
 
-// dummy data
-const APP = [
-	{appTitle : 'app1', appIcon: 'http://dummyimage.com/200x200/000/fff'},
-	{appTitle : 'app2', appIcon: 'http://dummyimage.com/200x200/000/fff'},
-	{appTitle : 'app3', appIcon: 'http://dummyimage.com/200x200/000/fff'}
-];
 
 // create our component
-const AppPage = () => {
-	const RenderedApp = APP.map( app => {
-		return <AppDetail key={APP.appTitle} app={app}/>
-	});
+const AppPage = (props) => {
+	const validImages = props.images.filter(image => !image.is_album);
 
-	return (
-			<ul className="media-list list-group">
-				{RenderedApp}
-			</ul>
-		);
+  const RenderedImages = validImages.map(image =>
+    <AppDetail key={image.title} image={image} />
+  );
+
+  return (
+    <ul className="media-list list-group">
+      {RenderedImages}
+    </ul>
+  );
 };
 
 // export component

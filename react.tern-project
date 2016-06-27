@@ -1,0 +1,8 @@
+{
+    "libs": ["browser", "es6"],
+    "loadEagerly": [
+    ],
+    "plugins": {
+        "es_modules": {}
+    }
+}
